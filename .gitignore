@@ -5,6 +5,7 @@ test
 temp*
 
 .env
+.envrc
 
 ### https://raw.github.com/github/gitignore/b304edf487ce607174e188712225b5269d43f279/Global/OSX.gitignore
 
@@ -19,4 +20,4 @@ temp*
 .vscode
 
 ### Google Cloud Credentials file
-reacjilator-325410-b9856ebdea0f.json
+randeft-reacjilator-4bc07d6622da.json

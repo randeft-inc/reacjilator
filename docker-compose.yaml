@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    container_name: "reacjilator"
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - ./:/app
+    ports:
+      - "8080:8080"
+    tty: true
+    stdin_open: true
+    environment:
+      SLACK_BOT_TOKEN: $SLACK_BOT_TOKEN
+      SLACK_APP_TOKEN: $SLACK_APP_TOKEN
+      GOOGLE_PROJECT_ID: $GOOGLE_PROJECT_ID
+      GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_APPLICATION_CREDENTIALS

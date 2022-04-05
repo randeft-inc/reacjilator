@@ -6,7 +6,9 @@
   "repository": "github:slackapi/reacjilator",
   "scripts": {
     "start": "nf start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "gcloud builds submit",
+    "deploy": "gcloud run deploy randeft-reacjilator --no-allow-unauthenticated --project=randeft-reacjilator --image=gcr.io/randeft-reacjilator/reacjilator --platform=managed --region=asia-northeast1 --ingress internal --set-env-vars \"SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}\" --set-env-vars \"SLACK_APP_TOKEN=${SLACK_APP_TOKEN}\" --set-env-vars \"GOOGLE_PROJECT_ID=${GOOGLE_PROJECT_ID}\" --set-env-vars \"SLACK_SIGNING_TOKEN=${SLACK_SIGNING_TOKEN}\""
   },
   "keywords": [
     "bot",
@@ -21,6 +23,7 @@
   "dependencies": {
     "@google-cloud/translate": "^6.0.0",
     "@slack/bolt": "^3.6.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.3"
   }
 }
